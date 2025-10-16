@@ -82,4 +82,24 @@ if __name__ == "__main__":
 
 
 
+#-------------------- DESIGN MEMO --------------------
 
+# A binary tree is the ideal structure for modeling the doctor hierarchy because it captures
+# the parent–child relationships of supervisors and their direct reports. Each doctor node can
+# have up to two subordinates, mirroring the structure of many real-world organizational
+# charts. Trees provide a natural way to visualize and traverse hierarchical relationships,
+# allowing efficient recursive operations like reporting, search, and updates.
+
+# Traversal types represent different real-world workflows. Preorder traversal (root-left-right)
+# is best when we want to process a supervisor before their team—for example, generating
+# reports or sending top-down communications. Inorder traversal (left-root-right) is useful for
+# ordered processing or reviews where both sides of a structure are balanced. Postorder
+# (left-right-root) fits bottom-up workflows, like aggregating team performance or cleaning up
+# data before deleting higher-level nodes.
+
+# A min-heap is ideal for managing emergency intake because it always allows instant access to
+# the highest-priority (lowest urgency value) patient in O(1) time while keeping insertions and
+# removals efficient at O(log n). The heap ensures real-time reordering of patients as new cases
+# arrive, simulating the triage system hospitals use in emergencies. This efficient structure
+# supports fairness and responsiveness under constant load, key requirements in healthcare and
+# other real-time systems.
